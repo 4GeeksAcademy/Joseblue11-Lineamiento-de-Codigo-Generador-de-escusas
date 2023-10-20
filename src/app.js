@@ -1,8 +1,10 @@
 import "./style.css";
 
+// Listas de palabras
+
 let who = ["The dog", "My grandma", "His turtle", "My bird", "My father", "My cat", "His parrot"];
 let action = ["ate", "peed", "crushed", "broke", "kick", "pull"];
-let what = ["my homework", "the keys", "the car", "the server", "the page", "the book", "the facture", "the archive"];
+let what = ["my homework", "the keys", "the car", "the server", "the page", "the book", "the bill", "the archive"];
 let when = [
   "before the class",
   "right on time",
@@ -14,11 +16,17 @@ let when = [
   "when you called me"
 ];
 
+// Funcion para generar un numero random
 function random(min, max) {
   return parseInt(Math.random() * (max - min) + min);
 }
 
+// Funcion que genera la excusa
+
 function generatorExcuse() {
+
+  // Variable con las palabras concatenada 
+
   let result =
     who[random(0, who.length)] +
     " " +
@@ -30,6 +38,8 @@ function generatorExcuse() {
   const p = document.getElementById("excuse");
   p.innerHTML = result;
 }
+
+// Llamada a la funcion cuando carga el evento 'onload'
 
 generatorExcuse();
 
