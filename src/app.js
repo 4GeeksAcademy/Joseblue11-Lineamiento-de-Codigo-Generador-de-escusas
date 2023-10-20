@@ -1,14 +1,17 @@
 import "./style.css";
 
-let who = ["The dog", "My grandma", "His turtle", "My bird"];
-let action = ["ate", "peed", "crushed", "broke"];
-let what = ["my homework", "the keys", "the car"];
+let who = ["The dog", "My grandma", "His turtle", "My bird", "My father", "My cat", "His parrot"];
+let action = ["ate", "peed", "crushed", "broke", "kick", "pull"];
+let what = ["my homework", "the keys", "the car", "the server", "the page", "the book", "the facture", "the archive"];
 let when = [
   "before the class",
   "right on time",
   "when I finished",
   "during my lunch",
-  "while I was praying"
+  "while I was praying",
+  "before the test",
+  "during a deploy",
+  "when you called me"
 ];
 
 function random(min, max) {

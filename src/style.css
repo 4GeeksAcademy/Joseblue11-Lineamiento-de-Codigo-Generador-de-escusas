@@ -7,3 +7,8 @@ body {
   align-items: center;
   height: 100vh;
 }
+
+p {
+  font-size: large;
+  font-weight: 600;
+}
