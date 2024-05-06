@@ -1,18 +1,22 @@
 import "./style.css";
 
-// Listas de palabras
+// LISTAS DE PALABRAS
+// Se definen constantes que contienen listas de
+// palabras para generar excusas. Estas listas se
+// mantienen constantes durante la ejecución del programa.
 
-let who = [
+const WHO = [
   "The dog",
   "My grandma",
   "His turtle",
   "My bird",
   "My father",
   "My cat",
-  "His parrot"
+  "His parrot",
 ];
-let action = ["ate", "peed", "crushed", "broke", "kick", "pull"];
-let what = [
+const ACTION = ["ate", "peed", "crushed", "broke", "kicked", "pulled"];
+
+const WHAT = [
   "my homework",
   "the keys",
   "the car",
@@ -20,9 +24,9 @@ let what = [
   "the page",
   "the book",
   "the bill",
-  "the archive"
+  "the archive",
 ];
-let when = [
+const WHEN = [
   "before the class",
   "right on time",
   "when I finished",
@@ -30,33 +34,38 @@ let when = [
   "while I was praying",
   "before the test",
   "during a deploy",
-  "when you called me"
+  "when you called me",
 ];
 
-// Funcion para generar un numero random
-function random(min, max) {
+// FUNCION PARA GENERAR NUMEROS RANDOM
+// Se define una función getRandomNumber que genera
+// un número aleatorio entre un rango dado.
+
+function getRandomNumber(min, max) {
   return parseInt(Math.random() * (max - min) + min);
 }
 
-// Funcion que genera la excusa
+// FUNCION QUE GENERA LAS ESCUSAS
+// Se define una función generateExcuse
+// que genera una excusa combinando palabras
+// aleatorias de las listas definidas anteriormente.
 
-function generatorExcuse() {
-  // Variable con las palabras concatenada
+function generateExcuse() {
+  //Se eligen aleatoriamente elementos de las listas
+  // para formar la excusa.
+  const who = WHO[getRandomNumber(0, WHO.length)];
+  const action = ACTION[getRandomNumber(0, ACTION.length)];
+  const what = WHAT[getRandomNumber(0, WHAT.length)];
+  const when = WHEN[getRandomNumber(0, WHEN.length)];
 
-  let result =
-    who[random(0, who.length)] +
-    " " +
-    action[random(0, action.length)] +
-    " " +
-    what[random(0, what.length)] +
-    " " +
-    when[random(0, when.length)];
+  // Se concatena las palabras elegidas para formar
+  // la excusa.
+  const result = `${who} ${action} ${what} ${when}`;
   const p = document.getElementById("excuse");
+
+  //Se obtiene el elemento HTML con el id "excuse".
   p.innerHTML = result;
 }
 
-// Llamada a la funcion cuando carga el evento 'onload'
-
-generatorExcuse();
-
-document.addEventListener("onload", generatorExcuse);
+// Llamada a la funcion cuando carga el evento 'DOMContentLoaded'
+document.addEventListener("DOMContentLoaded", generateExcuse);
